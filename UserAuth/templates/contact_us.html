@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block title%}
+Home | Truckporter
+{% endblock title %}
+
+{% block content %}
+<body>
+{%load staticfiles %}
+<script src="{% static 'js/smoothscroll.js' %}" ></script>
+<script src="{% static 'js/jquery.backstretch.min.js' %}"></script>
+<script src="{% static 'js/scripts.js' %}"></script>
+<script src="{% static 'js/sweetalert-dev.js' %}"></script>
+
+<link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/form-elements.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/sweetalert.css' %}">
+
+<nav class="navbar  navbar-fixed-top " >
+	<div class="container-fluid">
+		<div class="navbar-header pull-left">
+			<a class="navbar-brand">
+				<img class="img-responsive" src="{% static 'img/logo_min.png' %}" width="40" /> 
+			</a>
+		</div>
+		<div class="navbar-header" style="float:none; display:inline-block;">
+			<h3>
+				My Profile
+			</h3>
+		</div>
+		
+		<div class=" pull-center" style="float:right;  ">
+			<ul class="nav nav-pills navbar-right ">
+		
+				
+				<div class="dropdown"   >
+					<li class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"  id="pic_dropdown">
+						<label style="color:#000;padding-top: 10%;">Welcome, {{login_name}} </label>
+						<img src="{% static 'img/pro_pic.jpg' %}" class="img-responsive img-circle"  style="display:inline-block; height:40px; margin:10px" > 
+					</li>
+
+					<ul class="dropdown-menu" aria-labelledby="pic_dropdown">
+						<li><a href="/profile/">My Profile</a></li>
+						<li><a href="/referrals/">Referrals</a></li>
+						<li><a href="/logout/">Logout</a></li>
+					</ul>
+				</div>	
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+
+
+<div class="top-content"  >	
+	<div class="inner-bg">
+		<div class="container">
+			<div class="row">
+				<div  class="container-fluid col-sm-10 col-md-10 col-md-offset-1 col-sm-offset-1 form-bottom" style="margin-top:70px; padding-bottom: 70px; margin-bottom:20px;"  id="Contact">
+					<h1 style="background-color: #FB3; opacity:.8;margin:0px">Contact Us</h1>
+					<center>
+					<p  style="padding-top:50px;">
+						Facing any trouble? We're here to help! Have some feedback or criticism? We're all ears!
+						<br>
+						Just drop us a mail at support@truckporter.com
+						<br>
+						Alternatively, you can call us at +91-999999999999
+					</p>
+					</center>
+				</div>
+			</div>
+		</div>
+
+		<form class="form-signin" action="/dashboard/" style="margin:20px">
+			<input type="submit" value="Back to Dashboard" >
+		</form>
+	</div>
+</div>
+
+
+{% if msg_type %}
+	<script type="text/javascript">
+		swal( "{{msg_title}}" , "{{msg_text}}", "{{msg_type}}");
+	</script>
+{% endif %}
+
+
+<script type="text/javascript">
+$('li > a').click(function() {
+		$('li').removeClass();
+		$(this).parent().addClass('active');
+});	
+
+</script>
+
+
+</body>
+{% endblock %}

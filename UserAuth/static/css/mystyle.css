@@ -1,0 +1,502 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), 
+	   local('Roboto-Regular'), 
+	   url(../fonts/roboto.woff) 
+	   format('woff');
+}
+
+.login-logo
+{
+	
+	height: 96px;
+	margin: auto auto auto;
+	display: block;
+}
+
+h1, h2 {
+	font-family:'Roboto', sans-serif;
+	font-size: 38px;
+	font-weight: bold;
+	text-align: center;
+	color: #FF4127;
+	line-height: 50px;
+	text-shadow: 0px 0px 40px #FFF;
+}
+
+h3 {
+	font-family:'Roboto', sans-serif;
+	font-weight: bold;
+	text-align: center;
+	color: #FF4127;
+	font-size: 22px;
+	line-height: 30px;
+	text-shadow: 0px 0px 40px #FFF;
+}
+
+
+p {
+	font-weight: bold;
+	font-family: 'Roboto';
+	color:white;
+	text-shadow: 0px 0px 20px #fFF;
+	
+}
+
+
+/*.bg-grey {
+background-color: #222;
+}*/
+
+input:not(.file-input) {
+	color: #000000;
+	background-color: #FFFFCC;
+	font-weight: bold;
+	width: 17%;
+	height: 40px;
+}
+
+
+/*.button-signin {
+	background-color: #FF4127;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.button-signin:hover {
+	background-color: #DD2810;
+	color: white;
+}
+
+.button-signin:active:focus {
+	background-color: #991200;
+	color: white;
+}
+
+.button-signin:unfocus{
+ background-color: #991200;
+	color: black;   
+}*/
+
+.button-signout {
+	background-color: #cc1800;
+	border: none;
+	color: white;
+	padding: 10px 15px;
+	margin-top: 5px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.button-signout:hover {
+	background-color: #cc1800;
+	color: white;
+}
+
+.button-signout:focus {
+	background-color: #991200;
+	color: white;
+}
+
+.button-signout:active:focus {
+	background-color: #991200;
+	color: white;
+}
+
+.button-book {
+	background-color: #FF4127;
+	border: none;
+	color: white;
+	padding: 7px 11px;
+	margin-top: 6px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.button-book:hover {
+	background-color: #cc1800;
+	color: white;
+}
+
+.button-book:focus {
+	background-color: #991200;
+	color: white;
+}
+
+.icon-bar {
+   background-color:#FF4127 !important;
+}
+
+nav ul li a {
+	color:#cc1800;
+	font-size: 13px;
+	font-weight: 900;
+	margin-top: 5px;
+	margin-right: 5px;
+	padding: 0px;
+	cursor: hand;						
+
+}
+
+.navbar {
+	-webkit-box-shadow: 0 8px 6px -6px #999;
+	-moz-box-shadow: 0 8px 6px -6px #999;
+	box-shadow: 0 8px 6px -6px #999;
+	background-color: #FB3;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus {
+		color: white;
+		background-color: #cc1800;
+	}
+
+.nav-pills > li.active > a:hover {
+		color: white;
+		background-color: #FF4127;
+		}
+
+.nav-pills > li > a:hover {
+		color: white;
+		background-color: #FF4127;
+		}
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+.form-signin
+{
+	width: 100%;
+	margin: 0 auto;
+}
+.form-signin .form-signin-heading, .form-signin .checkbox
+{
+	margin-bottom: 10px;
+}
+.form-signin .checkbox
+{
+	font-weight: normal;
+}
+.form-signin .form-control
+{
+	color: #000;
+	position: relative;
+	font-size: 16px;
+	width: 100%;
+	height: auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.form-signin input[type="text"]
+{
+	margin-bottom: -1px;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 0;
+	margin-bottom: 5px;
+}
+
+.form-signin input[type="password"]
+{
+	margin-bottom: 10px;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.form-signin input:hover {
+   border-color: #FF4127;
+}
+
+.form-signin input:focus {
+   border-color: #FF4127;
+}
+
+
+.account-wall
+{
+	margin-top: 105px;
+	margin-bottom: 105px;
+	padding: 30px 0px 30px 0px;
+	background-color: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.login-title
+{
+	margin-top: 50px;
+	color: #FF4127;
+	font-size: 50px;
+	font-weight: bold;
+	display: block;
+	font-family: "Serif"
+}
+.need-help
+{
+	margin-top: 10px;
+}
+.new-account
+{
+	display: block;
+	margin-top: 10px;
+}
+
+.left-inner-addon {
+	position: relative;
+}
+.left-inner-addon input {
+	padding-left: 30px;    
+}
+.left-inner-addon i {
+	position: absolute;
+	padding: 10px 12px;
+	pointer-events: none;
+}
+
+.right-inner-addon {
+	position: relative;
+}
+.right-inner-addon input {
+	padding-right: 30px;    
+}
+
+.form-check-box {
+	color: #FFF;
+	vertical-align: text-bottom;
+	font-size: 16px;
+	text-decoration: none;
+
+}
+
+.control {
+	color: #fff;
+	font-size: 12px;
+	position: relative;
+	display: inline-block;
+	vertical-align: text-top;
+	padding-left: 30px;
+	cursor: pointer;
+
+}
+
+.control input {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+
+.control__indicator {
+	position: absolute;
+	top: 2px;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	background: #e6e6e6;
+}
+
+/* Hover and focus states */
+.control:hover input ~ .control__indicator{
+	background: #FF4127;
+}
+
+/* Checked state */
+.control input:checked ~ .control__indicator {
+	background: #FF4127;
+}
+
+/* Check mark */
+.control__indicator:after {
+	position: absolute;
+	display: none;
+	content: '';
+}
+
+/* Show check mark */
+.control input:checked ~ .control__indicator:after {
+	display: block;
+}
+
+/* Checkbox tick */
+.control--checkbox .control__indicator:after {
+	top: 4px;
+	left: 8px;
+	width: 5px;
+	height: 8px;
+	transform: rotate(45deg);
+	border: solid #fff;
+	border-width: 0 2px 2px 0;
+}
+
+.clear {
+	clear:both;
+	width:100%;
+	}   
+  
+input[type="submit"]{
+	background-color:#FF4127;
+	box-shadow: 0px 9px 0px #DD2210;
+}
+
+input[type="button"]{
+	background-color:#8F91CF;
+	box-shadow: 0px 9px 0px #6F71AF;
+}
+
+	
+input[type="submit"],
+input[type="button"]{
+	border:none;
+	margin-bottom: 10px;
+	color:#FFF;
+	
+	-webkit-transition: all 0.1s;
+	-moz-transition: all 0.1s;
+	transition: all 0.1s;
+}
+
+input[type="submit"]:active{
+	-webkit-transition: all 0.1s;
+	-moz-transition: all 0.1s;
+	transition: all 0.1s;
+	
+	position:relative;  
+}   
+input[type="submit"]:active{
+	box-shadow: 0px 2px 0px #AA1100;
+}
+
+input[type="button"]:active{
+	box-shadow: 0px 2px 0px #AFBFFD;
+}
+
+input[type="submit"]:hover{
+	background-color: #FF6147;
+}   
+
+input[type="button"]:hover{
+	background-color: #AFBFFF;
+}   
+
+input[type="submit"],
+input[type="button"] {
+	width: 40%;
+}   
+
+.forgot-password{
+	color: #BBB;
+	float: right;
+	font-weight: bold;
+	font-size: 14px;
+	position: relative;
+	display: inline-block;
+	vertical-align: text-top;
+	cursor: pointer;
+}
+
+.forgot-password:hover{
+	color: #FFF;
+	
+}
+
+.profile-name{
+	font-family:'Roboto', sans-serif;
+	font-weight: bold;
+	text-align: center;
+	float: none;
+	color: #FFF;
+	font-size: 22px;
+	line-height: 30px;
+}
+
+.profile-mobile{
+	font-family:'Roboto', sans-serif;
+	text-align: center;
+	float: none;
+	color: #FFF;
+	font-size: 15px;
+	line-height: 30px;
+}
+
+
+.profile-email{
+	font-family:'Roboto', sans-serif;
+	text-align: center;
+	float: none;
+	color: #FFF;
+	font-size: 15px;
+	line-height: 30px;
+}
+
+.profile-data {
+    height: 400px;
+    overflow-y: auto;
+    overflow-x:hidden;
+    
+}
+
+.profile-title{
+	font-family:'Roboto', sans-serif;
+	text-align: center;
+	float: none;
+	color: #FFF;
+	font-size: 25px;
+	border-bottom-style: solid;
+    border-bottom: thin line #FFF;
+	line-height: 30px;
+	text-shadow: 0px 0px 20px #FFF;
+}
+
+.profile-text{
+	font-family:'Roboto', sans-serif;
+	text-align: left;
+	color: #FFF;
+	font-size: 18px;
+	line-height: 30px;
+	text-indent: 20px;
+}
+
+
+footer {
+    position: absolute;
+    text-align: right;
+    float:right;
+    right: 0px;
+    bottom: 0px;
+    height: 40px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+
+.footer-text {
+	font-family:'Roboto', sans-serif;
+	color: #FFF;
+	font-size: 15px;
+	line-height: 30px;
+	margin-right: 10px;
+	text-shadow: 0px 0px 20px #FFF;
+	cursor: pointer;
+}
+
+.footer-pipe{
+	font-family:'Roboto', sans-serif;
+	color: #FFF;
+	line-height: 30px;
+	margin-right: 10px;
+	font-size:30px;
+	font-weight:bold;
+	text-shadow: 0px 0px 20px #FFF;	
+}

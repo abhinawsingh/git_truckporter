@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title%}
+Home | Truckporter
+{% endblock title %}
+
+{% block content %}
+<body>
+{%load staticfiles %}
+<script src="{% static 'js/smoothscroll.js' %}" ></script>
+<script src="{% static 'js/jquery.backstretch.min.js' %}"></script>
+<script src="{% static 'js/scripts.js' %}"></script>
+<script src="{% static 'js/sweetalert-dev.js' %}"></script>
+
+<link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/form-elements.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/sweetalert.css' %}">
+
+<nav class="navbar  navbar-fixed-top " >
+	<div class="container-fluid">
+		<div class="navbar-header pull-left">
+			<a class="navbar-brand">
+				<img class="img-responsive" src="{% static 'img/logo_min.png' %}" width="40" /> 
+			</a>
+		</div>
+		
+		<div class=" pull-right" >
+			<ul class="nav nav-pills navbar-right ">
+				
+				<div class="dropdown"   >
+					<li class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"  id="pic_dropdown">
+						<label style="color:#000;padding-top: 10%">Welcome, {{login_name}} </label>
+						<img src="{% static 'img/pro_pic.jpg' %}" class="img-responsive img-circle"  style="display:inline-block; height:40px; margin:10px" > 
+					</li>
+
+					<ul class="dropdown-menu" aria-labelledby="pic_dropdown">
+						<li><a href="/dashboard/">My Profile</a></li>
+						<li><a href="/dashboard/">Referrals</a></li>
+						<li><a href="/logout/">Logout</a></li>
+					</ul>
+				</div>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<h1>
+	Referrals
+</h1>
+
+<p>
+	No referral program is active 
+	right now. Check back again
+	after some days.
+</p>
+
+<table style="height:100%; width: 100%; margin-top: 30% " >
+	<tr>
+		<td>
+			<form class="form-signin" action="/dashboard/">
+				<input type="submit" value="Back to Dashboard" >
+			</form>
+		</td>
+	</tr>
+</table>
+
+
+
+
+{% if msg_type %}
+	<script type="text/javascript">
+		swal( "{{msg_title}}" , "{{msg_text}}", "{{msg_type}}");
+	</script>
+{% endif %}
+
+
+<script type="text/javascript">
+$('li > a').click(function() {
+		$('li').removeClass();
+		$(this).parent().addClass('active');
+});	
+
+</script>
+
+</body>
+{% endblock %}

@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+
+{% block title%}
+Home | Truckporter
+{% endblock title %}
+
+{% block content %}
+<body>
+{%load staticfiles %}
+<script src="{% static 'js/smoothscroll.js' %}" ></script>
+<script src="{% static 'js/jquery.backstretch.min.js' %}"></script>
+<script src="{% static 'js/scripts.js' %}"></script>
+<script src="{% static 'js/sweetalert-dev.js' %}"></script>
+
+<link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/form-elements.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/sweetalert.css' %}">
+
+<nav class="navbar  navbar-fixed-top " >
+	<div class="container-fluid">
+		<div class="navbar-header pull-left">
+			<a class="navbar-brand">
+				<img class="img-responsive" src="{% static 'img/logo_min.png' %}" width="40" /> 
+			</a>
+		</div>
+		<div class="navbar-header" style="float:none; display:inline-block;">
+			<h3>
+				My Profile
+			</h3>
+		</div>
+		
+		<div class=" pull-center" style="float:right;  ">
+			<ul class="nav nav-pills navbar-right ">
+		
+				
+				<div class="dropdown"   >
+					<li class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"  id="pic_dropdown">
+						<label style="color:#000;padding-top: 10%;">Welcome, {{login_name}} </label>
+						<img src="{% static 'img/pro_pic.jpg' %}" class="img-responsive img-circle"  style="display:inline-block; height:40px; margin:10px" > 
+					</li>
+
+					<ul class="dropdown-menu" aria-labelledby="pic_dropdown">
+						<li><a href="/dashboard/">My Profile</a></li>
+						<li><a href="/referrals/">Referrals</a></li>
+						<li><a href="/logout/">Logout</a></li>
+					</ul>
+				</div>	
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<div class="top-content"  >	
+	<div class="inner-bg">
+		<div class="container">
+			<div class="row">
+				<table class="form-bottom col-xs-3 col-xs-offset-1 col-sm-3 col-sm-offset-1 col-md-3 col-md-offset-1" style="height:400px">
+					<tr>
+						<td>
+							<img  class="img-responsive img-circle " src="{% static 'img/pro_pic.jpg' %}" style="padding:20px; float:none; " >
+						</td>
+					</tr>
+					<tr>
+						<td align="center">
+							<label class="profile-name">
+								{{full_name}}
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td align="center">
+							<label class="profile-mobile">
+								{{mobile}}
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td align="center">
+							<label class="profile-email">
+								{{email}}
+							</label>
+						</td>
+					</tr>
+				</table>
+				<div class="profile-data form-bottom col-xs-8 col-xs-offset-1 col-sm-7 col-sm-offset-1 col-md-7 col-md-offset-1 "   >
+					<label class="profile-title">
+						Account Details
+					</label>
+					<table class="profile-text" >
+						<tr>
+							<td> Email:</td>
+							<td> {{ email }} </td>
+						</tr>
+						<tr>
+							<td> Mobile:</td>
+							<td> {{mobile}}</td>
+						</tr>
+					<table class="profile-text">
+						<tr>
+							<td> Password: </td>
+							<td style="text-decoration:underline; cursor:pointer" onclick="change_pwd()">
+								Change Password
+							</td>
+						<tr>
+					</table>
+					<div style="display: none; margin:10px; margin-left:20%; width:50%" id="password_controls">
+						<form role="form" class="form-signin">					
+							<input type="text" id="old_p"  class="form-control"  name="password_old" placeholder="Old Password" required >
+							<input type="text" id="new_p" class="form-control"  name="password"  placeholder="New Password" required >
+							<input type="text" id="conf_p" class="form-control"  name="password_confirm"  placeholder="Confirm Password" required >
+							<input style="margin-left:25%" type="button" name="update_password" value="Update " onclick="update_pass()">
+						</form>
+					</div>
+
+					<hr>
+
+					<label class="profile-title">
+						Personal Details
+					</label>
+					<br>
+					<table class="profile-text">
+						<tr>
+							<td> Name: </td>
+							<td> {{full_name}} </td>
+							<td> Gender: </td>
+							<td> {{gender}}</td>
+						</tr>
+						<tr>
+							<td> Date Of Birth: </td>
+							<td> {{dob}}</td>
+						</tr>
+					</table>
+					<hr>	
+					<p>
+					 Note: To change any details in the profile, please send us a mail on support@truckporter.com
+					 </p>
+				</div>
+			</div>
+		</div>
+		<form class="form-signin" action="/dashboard/" style="margin:20px">
+			<input type="submit" value="Back to Dashboard" >
+		</form>
+
+	</div>
+</div>
+
+
+{% if msg_type %}
+	<script type="text/javascript">
+		swal( "{{msg_title}}" , "{{msg_text}}", "{{msg_type}}");
+	</script>
+{% endif %}
+
+
+<script type="text/javascript">
+$('li > a').click(function() {
+		$('li').removeClass();
+		$(this).parent().addClass('active');
+});	
+
+function change_pwd() {
+	var t1 = document.getElementById('password_controls');
+	if(t1.style.display == 'block')
+		t1.style.display='none';
+	else
+		t1.style.display = 'block';
+}
+
+function update_pass() {
+	var old_p = $('#old_p').val();
+	var new_p = $('#new_p').val();
+	var conf_p = $('#conf_p').val();
+
+	if(new_p != conf_p)
+	{
+		swal("Change Password", "Your passwords didn't match. Confirm your password again", "error");
+		return;
+	}
+
+	$.ajax({
+		url: '/ajax_change_password/',
+		type: 'get',
+		dataType: "json",
+		data: { old_password : old_p, 
+				new_password : new_p},
+		success: function(data) {
+			swal("Update Password", data['text'], data['status']);
+		},
+		failure: function(data) { 
+			swal("Could not update", "Could not connect to server", "error");
+		},
+		
+		}); 
+	
+}
+</script>
+
+
+</body>
+{% endblock %}
