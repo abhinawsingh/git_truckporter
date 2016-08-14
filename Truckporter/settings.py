@@ -78,9 +78,11 @@ WSGI_APPLICATION = 'Truckporter.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'truckporterdb',
-        'USER': 'truck',
-        'PASSWORD': 'porterdb',
+        'NAME': 'truckportertrial',
+        'USER': 'killerpuppy1958',
+        'PASSWORD': 'dogathewarrior',
+        'HOST': 'abrasomaster.csfqyuf4no4n.us-west-2.rds.amazonaws.com',
+        'PORT': '3306'
     }
 }
 
